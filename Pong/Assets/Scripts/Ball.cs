@@ -16,4 +16,10 @@ public class Ball : MonoBehaviour {
 
         GetComponent<Rigidbody>().velocity = new Vector3(speed * xDirection, speed * yDirection, 0f);
     }
+
+    void OnTriggerEnter(Collider other) {
+    	/*if (other.tag == "OffScene") {
+    		other.transform.
+    	}*/
+    }
 }
