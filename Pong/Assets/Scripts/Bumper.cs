@@ -1,9 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Bumper : MonoBehaviour {
-
+    [HideInInspector]
+    public int score;
+    public Text scoreLabel;
     public bool isBumperOne;
     public float translationSpeed = 5f;
     public float rotationSpeed = 500f;
@@ -16,6 +19,7 @@ public class Bumper : MonoBehaviour {
         previousMousePosition = new Vector3(0,0,0);
         mousePosition = new Vector3(0,0,0);
         newPosition = new Vector3(0,0,0);
+        score = 0;
     }
 
 	void Update () {
@@ -26,6 +30,9 @@ public class Bumper : MonoBehaviour {
             transform.parent.Translate(0f, Input.GetAxis("Vertical2") * translationSpeed * Time.deltaTime, 0f);
             transform.Rotate(0f, 0f, Input.GetAxis("Horizontal2") * rotationSpeed * Time.deltaTime);
         }
+
+        //Debug.Log((isBumperOne ? "One: " : "Zero: ") + score);
+        scoreLabel.text = score.ToString();
 	}
 
     public void OnPointerBeginDrag() {
