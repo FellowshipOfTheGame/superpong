@@ -28,8 +28,11 @@ public class GameController : MonoBehaviour {
 	}
 
 	public void newRound () {
-		if (!gameOver)
+		if (!gameOver) {
 			Invoke("createBall", 3);
+			left.resetPosition();
+			right.resetPosition();
+		}
 		
 	}
 

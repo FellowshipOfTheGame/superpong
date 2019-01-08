@@ -14,12 +14,17 @@ public class Bumper : MonoBehaviour {
     private Vector3 previousMousePosition;
     private Vector3 mousePosition;
     private Vector3 newPosition;
+    private Vector3 initialPosition;
+    private Vector3 initialControllerPosition;
 
     void Awake() {
         previousMousePosition = new Vector3(0,0,0);
         mousePosition = new Vector3(0,0,0);
         newPosition = new Vector3(0,0,0);
         score = 0;
+
+        initialPosition = transform.position;
+        initialControllerPosition = controller.transform.position;
     }
 
 	void Update () {
@@ -55,5 +60,10 @@ public class Bumper : MonoBehaviour {
 
         controller.transform.position = newPosition;    // change controller position
         previousMousePosition = mousePosition;
+    }
+
+    public void resetPosition() {
+        transform.position = initialPosition;
+        controller.transform.position = initialControllerPosition;
     }
 }
