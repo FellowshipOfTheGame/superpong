@@ -27,7 +27,11 @@ public class Bumper : MonoBehaviour {
         initialControllerPosition = controller.transform.position;
     }
 
-	void Update () {
+    void Start() {
+
+    }
+
+	void FixedUpdate () { // usando Fixed para não tremular ao forçar contra a parede
 		if (isBumperOne) {
             transform.parent.Translate(0f, Input.GetAxis("Vertical") * translationSpeed * Time.deltaTime, 0f);
             transform.Rotate(0f, 0f, Input.GetAxis("Horizontal") * rotationSpeed * Time.deltaTime);
@@ -36,7 +40,6 @@ public class Bumper : MonoBehaviour {
             transform.Rotate(0f, 0f, Input.GetAxis("Horizontal2") * rotationSpeed * Time.deltaTime);
         }
 
-        //Debug.Log((isBumperOne ? "One: " : "Zero: ") + score);
         scoreLabel.text = score.ToString();
 	}
 
@@ -66,4 +69,12 @@ public class Bumper : MonoBehaviour {
         transform.position = initialPosition;
         controller.transform.position = initialControllerPosition;
     }
+/* 
+    public float hitFactor(GameObject ball) {
+        // determinar em que posição da raquete a bolinha bateu, modificar a sua direção final
+        return (ball.transform.position.y - transform.position.y) / collider.bounds.size.y;
+    }
+    */
+
+
 }

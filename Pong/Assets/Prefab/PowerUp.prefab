@@ -9,47 +9,47 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1017930651460932}
+  m_RootGameObject: {fileID: 1159638117447328}
   m_IsPrefabAsset: 1
---- !u!1 &1017930651460932
+--- !u!1 &1159638117447328
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4384976001274458}
-  - component: {fileID: 33718870063535878}
-  - component: {fileID: 23658849725556650}
-  - component: {fileID: 135952752234947918}
-  - component: {fileID: 54842051462939126}
-  - component: {fileID: 114104631144779330}
+  - component: {fileID: 4724977412384892}
+  - component: {fileID: 33969859714959888}
+  - component: {fileID: 23698514183173766}
+  - component: {fileID: 135041840169018574}
+  - component: {fileID: 54230816554832128}
+  - component: {fileID: 114613078446935926}
   m_Layer: 0
-  m_Name: Ball
+  m_Name: PowerUp
   m_TagString: Ball
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4384976001274458
+--- !u!4 &4724977412384892
 Transform:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1017930651460932}
+  m_GameObject: {fileID: 1159638117447328}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.7, y: 0.7, z: 1}
+  m_LocalScale: {x: 0.4, y: 0.4, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!23 &23658849725556650
+--- !u!23 &23698514183173766
 MeshRenderer:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1017930651460932}
+  m_GameObject: {fileID: 1159638117447328}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -59,7 +59,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: 7e7984f6c108e664cb883a5682215672, type: 2}
+  - {fileID: 2100000, guid: 8fac68da4d8cc284c81d7df40f2d3fc4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -79,19 +79,19 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!33 &33718870063535878
+--- !u!33 &33969859714959888
 MeshFilter:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1017930651460932}
+  m_GameObject: {fileID: 1159638117447328}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!54 &54842051462939126
+--- !u!54 &54230816554832128
 Rigidbody:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1017930651460932}
+  m_GameObject: {fileID: 1159638117447328}
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
@@ -101,12 +101,12 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &114104631144779330
+--- !u!114 &114613078446935926
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1017930651460932}
+  m_GameObject: {fileID: 1159638117447328}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 68846f3ec39855a4b896e701bc91acab, type: 3}
@@ -114,14 +114,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameController: {fileID: 0}
   speed: 7
---- !u!135 &135952752234947918
+--- !u!135 &135041840169018574
 SphereCollider:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1017930651460932}
+  m_GameObject: {fileID: 1159638117447328}
   m_Material: {fileID: 13400000, guid: 2fdb322f3465de64cb31d6a28935a48d, type: 2}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5

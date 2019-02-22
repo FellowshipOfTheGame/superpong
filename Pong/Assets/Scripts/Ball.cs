@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Ball : MonoBehaviour {
 	public GameController gameController;
-    public float speed = 5f;
+    public float speed;
 
 	void Start () {
         Invoke("assignVelocity", 1);
@@ -13,6 +13,7 @@ public class Ball : MonoBehaviour {
     void Update () {
     	if (gameController.gameOver)
     		Destroy(gameObject);
+       // Debug.Log("velocidade da bola: "+GetComponent<Rigidbody>().velocity);
     }
 
     void assignVelocity () {
@@ -22,9 +23,19 @@ public class Ball : MonoBehaviour {
         GetComponent<Rigidbody>().velocity = new Vector3(speed * xDirection, speed * yDirection, 0f);
     }
 
-    void OnTriggerEnter(Collider other) {
-    	/*if (other.tag == "OffScene") {
-    		other.transform.
-    	}*/
+    void OnTriggerEnter(Collider collider) {
+        if (collider.tag == "PowerUp") {
+            GameObject powerUpObject = collider.gameObject;
+            powerUpObject.GetComponent<PowerUp>().Execute(); // execute o powerup
+            powerUpObject.GetComponent<Renderer>().enabled = false; // não exiba o powerup na cena
+        }
     }
+/*
+    void OnColliderEnter(Collider collider) {
+        if (collider.tag == "Bumper") {
+            float modifier = collider.gameObject.GetComponent<Bumper>().hitFactor(ball: gameObject);
+            if (modifier < -0.2) yModifier = 
+        }
+    }
+*/
 }
