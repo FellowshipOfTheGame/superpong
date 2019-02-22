@@ -3,11 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Ball : MonoBehaviour {
-
+	public GameController gameController;
     public float speed = 5f;
 
 	void Start () {
         Invoke("assignVelocity", 1);
+    }
+
+    void Update () {
+    	if (gameController.gameOver)
+    		Destroy(gameObject);
     }
 
     void assignVelocity () {

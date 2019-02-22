@@ -39,7 +39,7 @@ Transform:
   m_GameObject: {fileID: 1017930651460932}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -112,6 +112,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68846f3ec39855a4b896e701bc91acab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameController: {fileID: 114335735421204770, guid: b600657c603fd144e9c0e1ce74ed4bae,
+    type: 2}
   speed: 7
 --- !u!135 &135952752234947918
 SphereCollider:
