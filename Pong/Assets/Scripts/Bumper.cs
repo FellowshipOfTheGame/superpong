@@ -4,8 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class Bumper : MonoBehaviour {
-    [HideInInspector]
-    public int score;
+    [HideInInspector] public int score;
     public Text scoreLabel;
     public bool isBumperOne;
     public float translationSpeed = 5f;
@@ -30,14 +29,18 @@ public class Bumper : MonoBehaviour {
 	void Update () {
 		if (isBumperOne) {
             transform.parent.Translate(0f, Input.GetAxis("Vertical") * translationSpeed * Time.deltaTime, 0f);
-            transform.Rotate(0f, 0f, Input.GetAxis("Horizontal") * rotationSpeed * Time.deltaTime);
         } else {
             transform.parent.Translate(0f, Input.GetAxis("Vertical2") * translationSpeed * Time.deltaTime, 0f);
-            transform.Rotate(0f, 0f, Input.GetAxis("Horizontal2") * rotationSpeed * Time.deltaTime);
         }
 
         //Debug.Log((isBumperOne ? "One: " : "Zero: ") + score);
         scoreLabel.text = score.ToString();
+	}
+
+	void OnCollisionEnter (Collision col) {
+		if (col.gameObject.tag == "Ball") {
+			GetComponent<AudioSource>().Play();
+		}
 	}
 
     public void OnPointerBeginDrag() {

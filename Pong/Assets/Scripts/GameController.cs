@@ -29,7 +29,7 @@ public class GameController : MonoBehaviour {
 
 	public void newRound () {
 		if (!gameOver) {
-			Invoke("createBall", 3);
+			Invoke("createBall", 0);
 			left.resetPosition();
 			right.resetPosition();
 		}
