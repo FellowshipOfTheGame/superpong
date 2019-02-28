@@ -125,6 +125,6 @@ MonoBehaviour:
     type: 3}
   speed: 15
   impulseSpeed: 5
-  minRebounceAngle: 15
-  maxRebounceAngle: 30
+  minRebounceAngle: 10
+  maxRebounceAngle: 25
   ballRb: {fileID: 2060127685}

@@ -966,7 +966,7 @@ PrefabInstance:
     - target: {fileID: 114335735421204770, guid: b600657c603fd144e9c0e1ce74ed4bae,
         type: 3}
       propertyPath: maxScore
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4169519641756812, guid: b600657c603fd144e9c0e1ce74ed4bae, type: 3}
       propertyPath: m_LocalPosition.x
