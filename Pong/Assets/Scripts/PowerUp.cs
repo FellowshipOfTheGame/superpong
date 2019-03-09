@@ -20,13 +20,12 @@ public abstract class PowerUp : MonoBehaviour {
     }
 
     void Start() {
-        rend = GetComponent<Renderer>();
-        rend.enabled = false;
+        gameObject.SetActive(false);
         // INÍCIO ZONA CRÍTICA - o power up não habilita corretamente antes disto
         GameObject ball = GameObject.FindWithTag("Ball");
         rb = ball.GetComponent<Rigidbody>();
         // FIM ZONA CRÍTICA - o power up agora pode ser executado
-        rend.enabled = true;
+        gameObject.SetActive(true);
     }
 
     void FixedUpdate() {

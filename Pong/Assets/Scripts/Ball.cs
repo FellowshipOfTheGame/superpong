@@ -33,12 +33,12 @@ public class Ball : MonoBehaviour {
             GameObject powerUpObject = collider.gameObject;
             Renderer powerUpRenderer = powerUpObject.GetComponent<Renderer>();
 
-            if (powerUpRenderer.enabled) {
-                Debug.Log("Colidiu com powerup");
-                powerUpObject.GetComponent<PowerUp>().Execute(); // execute o powerup
-                Debug.Log("O powerup atingido foi desabilitado");
-                powerUpRenderer.enabled = false; // não exiba o powerup na cena
-            }
+            
+            Debug.Log("Colidiu com powerup");
+            powerUpObject.GetComponent<PowerUp>().Execute(); // execute o powerup
+            Debug.Log("O powerup atingido foi desabilitado");
+            powerUpRenderer.enabled = false; // não exiba o powerup na cena
+            
         }
     }
 /*
