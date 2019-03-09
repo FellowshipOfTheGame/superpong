@@ -9,8 +9,8 @@ public class OffScene : MonoBehaviour {
 	void OnTriggerEnter (Collider other) {
         if (other.tag == "Ball") {
             Destroy(other.gameObject);
-            gameController.newRound();
-            goalOwner.score++;
+			gameController.NewRound();
+			goalOwner.score++;
         }
 	}
 }

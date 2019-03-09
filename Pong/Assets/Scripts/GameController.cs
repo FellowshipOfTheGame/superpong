@@ -17,7 +17,8 @@ public class GameController : MonoBehaviour {
 		if (left.score == maxScore || right.score == maxScore) {
 			Debug.Log("O jogador " + (left.score == maxScore ? "1" : "2") + " é o vencedor!");
 			gameOver = true;
-			Invoke("WinPrompt", 2);
+			Invoke("WinPrompt", 0);
+
 			// TODO sinalizar o fim de jogo globalmente
 		}
 	}
@@ -27,16 +28,15 @@ public class GameController : MonoBehaviour {
 		SceneManager.LoadScene("MainMenu");
 	}
 
-	public void newRound () {
+	public void NewRound () {
 		if (!gameOver) {
-			Invoke("createBall", 3);
+			Invoke("CreateBall", 0);
 			left.resetPosition();
 			right.resetPosition();
 		}
-		
 	}
 
-	void createBall () {
+	void CreateBall () {
 		Instantiate(ballPrefab, Vector3.zero, Quaternion.identity);
 	}
 }

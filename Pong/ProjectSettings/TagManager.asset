@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Ball
   - OffScene
+  - Bumper
   layers:
   - Default
   - TransparentFX
