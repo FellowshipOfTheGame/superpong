@@ -23,7 +23,6 @@ GameObject:
   - component: {fileID: 23846770354567976}
   - component: {fileID: 135417697620359682}
   - component: {fileID: 54934061682543168}
-  - component: {fileID: 114668672934296920}
   - component: {fileID: 114768679138856316}
   m_Layer: 0
   m_Name: SpeedModify
@@ -102,19 +101,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &114668672934296920
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1402143125199946}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 68846f3ec39855a4b896e701bc91acab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameController: {fileID: 0}
-  speed: 7
 --- !u!114 &114768679138856316
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -126,8 +112,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93ac0e27c940e0947ae49eb6e77157d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  durationTime: 10
-  ball: {fileID: 1017930651460932, guid: 7d1b9f87a1bc32f49b4f2b096cf7f549, type: 2}
+  durationTime: 5
+  presenceTime: 3
+  gameController: {fileID: 1726233136999638, guid: b600657c603fd144e9c0e1ce74ed4bae,
+    type: 2}
   multiplier: 2
 --- !u!135 &135417697620359682
 SphereCollider:

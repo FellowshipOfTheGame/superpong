@@ -112,7 +112,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68846f3ec39855a4b896e701bc91acab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameController: {fileID: 0}
+  gameController: {fileID: 114335735421204770, guid: b600657c603fd144e9c0e1ce74ed4bae,
+    type: 2}
   speed: 7
 --- !u!135 &135952752234947918
 SphereCollider:

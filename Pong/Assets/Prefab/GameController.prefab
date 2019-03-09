@@ -53,5 +53,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left: {fileID: 0}
   right: {fileID: 0}
-  maxScore: 2
+  maxScore: 5
   gameOver: 0
+  ballPrefab: {fileID: 1017930651460932, guid: 7d1b9f87a1bc32f49b4f2b096cf7f549, type: 2}
+  spawnPoints:
+  - {x: 5, y: 2, z: 0}
+  - {x: 3, y: -2, z: 0}
+  - {x: 0, y: 3, z: 0}
+  powerUpTimer: 3
+  powerUp:
+  - {fileID: 1402143125199946, guid: c8c79d55a2ee9bc489311a915aba2a2b, type: 2}
+  powerUpDisabled: 0

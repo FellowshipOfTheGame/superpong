@@ -9,26 +9,29 @@ public class GameController : MonoBehaviour {
 	[HideInInspector]
 	public bool gameOver;
 	public GameObject ballPrefab;
-	public float powerUpSpawnTime = 0;
 	public Vector3[] spawnPoints;
-	public GameObject genericPowerUp;
 	public float powerUpTimer;
 	private float timer;
 	public GameObject[] powerUp;
 	public bool powerUpDisabled;
+	public bool waitNewRound;
+	private float newRoundTimer;
+	public int timeToReset;
 
 	void Awake () {
 		gameOver = false;
-		InvokeRepeating("spawnPowerUp", powerUpSpawnTime, powerUpSpawnTime);
-		timer = powerUpTimer;
+		//InvokeRepeating("spawnPowerUp", powerUpSpawnTime, powerUpSpawnTime);
+		timer = 0;
+		newRoundTimer = 0;
 		powerUpDisabled = true;
+		waitNewRound = false;
 	}
 
 	void Update () {
 		if (left.score == maxScore || right.score == maxScore) {
 			Debug.Log("O jogador " + (left.score == maxScore ? "1" : "2") + " é o vencedor!");
 			gameOver = true;
-			Invoke("WinPrompt", 2);
+			Invoke("WinPrompt", timeToReset);
 			// TODO sinalizar o fim de jogo globalmente
 		}
 
@@ -36,10 +39,21 @@ public class GameController : MonoBehaviour {
 	}
 
 	void FixedUpdate () {
-		timer--;
-		if (timer == 0) {
-			//spawnPowerUp();
-			timer = powerUpTimer;
+		//Debug.Log ("Não há power ups na cena: "+powerUpDisabled);
+		if (waitNewRound) {
+			//Debug.Log("Waiting for new round");
+			newRoundTimer += Time.fixedDeltaTime;
+			if (newRoundTimer > timeToReset)
+				waitNewRound = false;
+		}
+
+		//Debug.Log("Time to spawn powerup: "+timer);
+		if (powerUpDisabled) timer += Time.fixedDeltaTime;
+		else if (!powerUpDisabled && waitNewRound) timer = 0;
+
+		if (timer > powerUpTimer) {
+			spawnPowerUp();
+			timer = 0;
 		}
 	}
 
@@ -49,8 +63,9 @@ public class GameController : MonoBehaviour {
 	}
 
 	public void newRound () {
+		waitNewRound = true;
 		if (!gameOver) {
-			Invoke("createBall", 3);
+			Invoke("createBall", timeToReset);
 			left.resetPosition();
 			right.resetPosition();
 		}
