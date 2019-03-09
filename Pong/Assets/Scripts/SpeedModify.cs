@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class SpeedModify : PowerUp {
     public float multiplier;
-    
 
     public override void Execute() {
         if (ctrlReference.powerUpDisabled) {
@@ -12,17 +11,20 @@ public class SpeedModify : PowerUp {
             ctrlReference.powerUpDisabled = false;
             if (rb != null) {
                 rb.velocity = rb.velocity * multiplier;
-            } else {
-                Debug.Log("Não foi possível habilitar Speed Modify! O RigidBody da bolinha é nulo.");
+                Debug.Log("ativou");
+                powerUpActive = true;
             }
         }
     }
 
     public override void Terminate() {
-        ctrlReference.powerUpDisabled = true;
         if (rb != null) {
-            rb.velocity = rb.velocity / multiplier;
-            Debug.Log("Terminando speed modify");
+            ctrlReference.powerUpDisabled = true;
+            if (powerUpActive) {
+                rb.velocity = rb.velocity / multiplier;
+                Debug.Log("Terminando speed modify");
+                powerUpActive = false;
+            }
             Destroy(gameObject);
         }
     }

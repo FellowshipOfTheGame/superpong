@@ -51,7 +51,7 @@ public class GameController : MonoBehaviour {
 		if (powerUpDisabled) timer += Time.fixedDeltaTime;
 		else if (!powerUpDisabled && waitNewRound) timer = 0;
 
-		if (timer > powerUpTimer) {
+		if (timer > Random.Range(0.5f, powerUpTimer)) {
 			spawnPowerUp();
 			timer = 0;
 		}
@@ -68,6 +68,7 @@ public class GameController : MonoBehaviour {
 			Invoke("createBall", timeToReset);
 			left.resetPosition();
 			right.resetPosition();
+			Destroy(GameObject.FindWithTag("PowerUp")); // destruir o power up que estiver na cena
 		}
 		
 	}

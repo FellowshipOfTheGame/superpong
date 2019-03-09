@@ -9,14 +9,14 @@ public abstract class PowerUp : MonoBehaviour {
     private float timer2;
     public GameObject gameController;
     protected GameController ctrlReference;
-    
-    protected Renderer rend;
+    protected bool powerUpActive;
     protected Rigidbody rb;
 
     void Awake() {
         ctrlReference = gameController.GetComponent<GameController>();
         timer1 = 0;
         timer2 = 0;
+        powerUpActive = false;
     }
 
     void Start() {
